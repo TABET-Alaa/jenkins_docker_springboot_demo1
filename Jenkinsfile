@@ -11,5 +11,12 @@ pipeline{
                 sh 'mvn clean install'
             }
         }
+        stage('Build the docker Image'){
+            steps{
+                script{
+                    sh 'docker build -t helloworld-springboot .'
+                }
+            }
+        }
     }
 } 
